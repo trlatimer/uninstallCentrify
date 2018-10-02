@@ -2,6 +2,7 @@
 Bash script for uninstalling Centrify from Macintosh systems and correcting user permissions
 
 Version 1.2
+
 Date: 10/1/2018
 
 Author: Tyler Latimer
