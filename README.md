@@ -29,19 +29,19 @@ You may encounter an issue where adleave unjoins the domain and uninstalls Centr
   - When the script is unable to rejoin the domain, the new mobile accounts will not be created and the user files/permissions will not be transferred. This will continue to cause the user to not be able to log in with AD account.
 - How to correct:
   - You can edit the script and comment out the leaveDomain and uninstallCentrify function calls. It is recommended to manually join the domain or run the JAMF policy seperate and ensure the domain is joined before running again. Make sure to comment out the JAMF policy line as well. You can then run the script again and it should move the user files.
-   1. Edit script, commenting out leaveDomain, uninstallCentrify, and JAMF policy calls as needed
-   2. Join the domain through JAMF policy or manually adding
-   3. Run script again
-   4. Check logs and ensure that user files were transferred appropriately
-   5. Log out and attempt to log in as AD user and ensure that files are accessible
-   OR
+    - Edit script, commenting out leaveDomain, uninstallCentrify, and JAMF policy calls as needed
+    - Join the domain through JAMF policy or manually adding
+    - Run script again
+    - Check logs and ensure that user files were transferred appropriately
+    - Log out and attempt to log in as AD user and ensure that files are accessible
+- OR
   - Manually join the domain and manually run the commands to transfer permissions.
-   1. Join the domain through JAMF policy or System Preferences
-   2. Open terminal
-   3. Run sudo /System/Library/CoreServices/ManagedClient.app/Contents/Resources/createmobileaccount -n <username>
-   4. Run sudo chown -R <username>:staff /Users/<username>
-   5. Repeat steps 3 and 4 for each mobile account that needs moved
-   6. Log out and attempt to log in as AD user and ensure that files are accessible
+    - Join the domain through JAMF policy or System Preferences
+    - Open terminal
+    - Run sudo /System/Library/CoreServices/ManagedClient.app/Contents/Resources/createmobileaccount -n <username>
+    - Run sudo chown -R <username>:staff /Users/<username>
+    - Repeat steps 3 and 4 for each mobile account that needs moved
+    - Log out and attempt to log in as AD user and ensure that files are accessible
 
 May encounter access issues after logging in as an AD user
 - Possible Causes:
@@ -50,12 +50,12 @@ May encounter access issues after logging in as an AD user
   - You are able to log into the user's account but can't access files within documents or other directories.
 - How to correct:
   - Apply permissions to enclosed folders
-    1. Go to Finder > HDD > Users
-    2. Right click folder experiencing the issues
-    3. Click Get Info
-    4. Unlock Get Info pane in order to access the permissions
-    5. Click the gear box at the bottom and select 'Apply to enclosed items...'
-    6. Click Apply if prompted to
+    - Go to Finder > HDD > Users
+    - Right click folder experiencing the issues
+    - Click Get Info
+    - Unlock Get Info pane in order to access the permissions
+    - Click the gear box at the bottom and select 'Apply to enclosed items...'
+    - Click Apply if prompted to
 
 ## BUG REPORTING:
 If you experience any bugs please report them to me at trlatimer95@gmail.com or submit a form through the website itself.
