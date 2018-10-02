@@ -6,13 +6,13 @@ Date: 10/1/2018
 
 Author: Tyler Latimer
 
-##DESCRIPTION:
+## DESCRIPTION:
    This script is to remove Centrify from Mac OS X systems in order to upgrade to the newer OS without conflicts.
    The script begins by unjoining the domain through adleave. If adleave does not work, the uninstall script will unjoin automatically. Once off the domain, the script checks for the version of Centrify and runs the appropriate uninstall.sh file.
    After uninstalling Centrify, the jamf event trigger "bind" is triggered which joins the system back to the domain.
    The user files are also transferred over from the Centrify account to the new user account.
 
-##PRECAUTIONS:
+## PRECAUTIONS:
    The script currently only handles one mobile user account. For systems with more than one mobile user, you will need to gather the UID for each and manually move their files over.
 
    The script checks the length of the hostname of the system. If the name exceeds 15 characters, the domain will not allow the script to join it to the domain. The script is configured to exit and prompt to change the name.
@@ -21,7 +21,7 @@ Author: Tyler Latimer
 
    The script was configured to run on a machine that is connected to the domain. You will need to modify the hostname check to include .local if you wish to run on systems not on a domain.
 
-##KNOWN ISSUES:
+## KNOWN ISSUES:
    You may encounter an issue where adleave unjoins the domain and uninstalls Centrify but is unable to join through JAMF
        Possible Causes:
            Too many join attempts, name collisions, JAMF policy failing
