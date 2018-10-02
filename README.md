@@ -1,4 +1,4 @@
-# uninstallCentrify
+# Uninstall Centrify
 Bash script for uninstalling Centrify from Macintosh systems and correcting user permissions
 
 Version 1.2
